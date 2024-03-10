@@ -1,0 +1,128 @@
+.footer {
+    background: #2d314d;
+    padding: rem(51) 0;
+    padding-bottom: 0;
+
+    svg path {
+        fill: $White;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include breakpointDown(mobile) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-right {
+            text-align: right;
+
+            @include breakpointDown(mobile) {
+                text-align: center;
+            }
+
+            .btn {
+                margin-bottom: rem(14);
+            }
+
+            p {
+                font-size: rem(15);
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: rem(128);
+
+            @include breakpointDown(desktop) {
+                gap: rem(80);
+            }
+
+            @include breakpointDown(tablet) {
+                gap: rem(50);
+            }
+
+            @include breakpointDown(mobile) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: rem(36);
+                margin-bottom: rem(30);
+            }
+
+        }
+
+        .social-media ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: rem(13);
+
+        }
+
+        .social-media>svg {
+            margin-bottom: rem(51);
+
+            @include breakpointDown(mobile) {
+                margin-bottom: rem(30);
+            }
+        }
+
+        &-column {
+
+            a {
+                color: $White;
+                font-size: rem(15);
+                transition: color 400ms cubic-bezier(.63, -0.45, .63, 2.45);
+
+                &:hover {
+                    color: $Lime-Green;
+                }
+            }
+
+            &.links {
+                padding-top: 4px;
+
+                @include breakpointDown(mobile) {
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+
+                }
+
+                li {
+                    padding-bottom: rem(15);
+                }
+
+                &:last-child {
+                    margin-top: rem(-30);
+                }
+            }
+        }
+    }
+
+    p {
+        padding: 0;
+        padding-top: rem(10);
+        text-align: center;
+        font-size: rem(15);
+
+        a {
+            color: $Bright-Cyan;
+            font-size: rem(16);
+            letter-spacing: 1px;
+            transition: color 400ms cubic-bezier(.63, -0.45, .63, 2.45);
+
+            &:hover {
+                color: $Lime-Green;
+            }
+        }
+    }
+
+}

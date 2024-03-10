@@ -1,0 +1,101 @@
+.header {
+    padding: rem(20) 0;
+    position: relative;
+    z-index: 5;
+    background: $White;
+
+
+    .header-flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @include breakpointDown(mobile) {
+            height: rem(40);
+            justify-content: space-between;
+            padding: 0 rem(40);
+        }
+
+        .logo {
+            padding-top: rem(10);
+        }
+
+
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: rem(20);
+
+            @include breakpointDown(mobile) {
+                display: block;
+                position: absolute;
+                top: rem(110);
+                left: 50%;
+                transform: translateX(-50%);
+                background: $White;
+                z-index: 10;
+                text-align: center;
+                border-radius: rem(10);
+                box-shadow: 0 0 rem(10) 5px rgba(0, 0, 0, 0.2);
+                max-height: 0;
+                width: 0;
+                overflow: hidden;
+                transition: all 0.5s ease-in-out;
+
+                li {
+                    padding: rem(15) 0;
+
+                    a {
+                        font-size: rem(18);
+                        color: $Dark-Blue;
+                        font-weight: 700;
+                    }
+                }
+
+                &.active {
+                    max-height: rem(500);
+                    width: 87%;
+                    padding: rem(30);
+                }
+            }
+
+            a {
+                color: $Grayish-Blue;
+                font-size: rem(15);
+                position: relative;
+                transition: all .5s cubic-bezier(.68, -0.55, .27, 1.55);
+                transition: all 0.5s ease-in;
+
+                &:hover {
+                    color: $Dark-Blue;
+                }
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    bottom: rem(-30);
+                    height: 4px;
+                    width: 0;
+                    background: transparent;
+                    transition: all .5s cubic-bezier(.68, -0.55, .27, 1.55);
+
+                }
+
+                &:hover::before {
+                    background: $btn-primary;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @include breakpointDown(mobile) {
+        .btn {
+            display: none;
+        }
+    }
+}
